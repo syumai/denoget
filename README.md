@@ -1,14 +1,47 @@
-# deno-libs
+# denoget
 
-* Small libs for [deno](https://github.com/denoland/deno).
+- denoget installs executable deno script.
 
-## Commands
+## Features
 
-* cat
+- Install executable script into ~/.deno/denoget/bin
 
-### Usage
+## Supported Environments
+
+- macOS
+- Linux
+
+## Usage
 
 ```sh
-# cat
-./cat.ts README.md cat.ts
+denoget https://denopkg.com/syumai/deno-libs/denoinit/denoinit.ts
+denoinit # now you can use installed command!
 ```
+
+## Requirements for installing
+
+- deno
+- wget
+
+## Install
+
+```sh
+# Install denoget
+deno -A https://denopkg.com/syumai/deno-libs/denoget/denoget.ts \
+  https://denopkg.com/syumai/deno-libs/denoget/denoget.ts
+
+# export denoget executable script path
+echo 'export PATH="$HOME/.deno/denoget/bin:$PATH"' >> ~/.bashrc # change this to your shell
+```
+
+## Create Executable Script
+
+- Add shebang to top of your deno script.
+  - This defines what permissions are needed.
+
+```sh
+#!/usr/bin/env deno --allow-write --allow-env --allow-run
+```
+
+- Host script on the web.
+- Install script using denoget.
