@@ -27,8 +27,8 @@ denoinit # now you can use installed command!
 
 ```sh
 # Install denoget
-deno -A https://denopkg.com/syumai/deno-libs/denoget/denoget.ts \
-  https://denopkg.com/syumai/deno-libs/denoget/denoget.ts
+deno -A https://denopkg.com/syumai/denoget/denoget.ts \
+  https://denopkg.com/syumai/denoget/denoget.ts
 
 # export denoget executable script path
 echo 'export PATH="$HOME/.deno/denoget/bin:$PATH"' >> ~/.bashrc # change this to your shell
