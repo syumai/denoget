@@ -23,14 +23,19 @@ denoinit # now you can use installed command!
 - deno
 - wget
 
-## Install
+## Installing
+
+### Install denoget
+
+- denoget can be installed using the command itself.
 
 ```sh
-# Install denoget
-deno -A https://denopkg.com/syumai/denoget/denoget.ts \
-  https://denopkg.com/syumai/denoget/denoget.ts
+deno -A https://denopkg.com/syumai/denoget/denoget.ts https://denopkg.com/syumai/denoget/denoget.ts
+```
 
-# export denoget executable script path
+### Add `~/.deno/denoget/bin` to PATH
+
+```
 echo 'export PATH="$HOME/.deno/denoget/bin:$PATH"' >> ~/.bashrc # change this to your shell
 ```
 
@@ -40,7 +45,7 @@ echo 'export PATH="$HOME/.deno/denoget/bin:$PATH"' >> ~/.bashrc # change this to
   - This defines what permissions are needed.
 
 ```sh
-#!/usr/bin/env deno --allow-write --allow-env --allow-run
+#!/usr/bin/env deno --allow-read --allow-write --allow-env --allow-run
 ```
 
 - Host script on the web.
