@@ -25,15 +25,15 @@ denoinit # now you can use installed command!
 
 ## Installing
 
-### Install denoget
+### 1. Install denoget
 
-- denoget can be installed using the command itself.
+denoget can be installed by using itself.
 
 ```sh
 deno -A https://denopkg.com/syumai/denoget/denoget.ts https://denopkg.com/syumai/denoget/denoget.ts
 ```
 
-### Add `~/.deno/denoget/bin` to PATH
+### 2. Add `~/.deno/denoget/bin` to PATH
 
 ```
 echo 'export PATH="$HOME/.deno/denoget/bin:$PATH"' >> ~/.bashrc # change this to your shell
