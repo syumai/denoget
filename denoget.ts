@@ -1,16 +1,15 @@
 #!/usr/bin/env deno --allow-all
 
-import {
+const {
   args,
   env,
   readDirSync,
   mkdirSync,
   writeFileSync,
   exit,
-  stdout,
   stdin,
   run,
-} from 'deno';
+} = Deno;
 import * as path from 'https://deno.land/x/fs/path/mod.ts';
 import { parse } from './shebang.ts';
 

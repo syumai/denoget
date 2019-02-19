@@ -15,12 +15,13 @@
 
 ```sh
 denoget https://denopkg.com/syumai/deno-libs/denoinit/denoinit.ts
-denoinit # now you can use installed command!
+# now you can use installed command!
+denoinit
 ```
 
 ## Requirements for installing
 
-- deno
+- Deno
 - wget
 
 ## Installing
@@ -30,7 +31,7 @@ denoinit # now you can use installed command!
 denoget can be installed by using itself.
 
 ```sh
-deno -A https://denopkg.com/syumai/denoget/denoget.ts https://denopkg.com/syumai/denoget/denoget.ts
+deno -A https://deno.land/x/denoget/denoget.ts https://deno.land/x/denoget/denoget.ts
 ```
 
 ### 2. Add `~/.deno/denoget/bin` to PATH
