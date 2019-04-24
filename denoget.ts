@@ -168,8 +168,8 @@ async function main() {
   }
   const commands = [
     'deno',
-    SRC_FILE_PATH,
     ...grantedPermissions.map(getFlagFromPermission),
+    SRC_FILE_PATH,
     '$@',
   ];
 
