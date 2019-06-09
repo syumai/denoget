@@ -10,7 +10,7 @@ const {
   stdin,
   run,
 } = Deno;
-import * as path from 'https://deno.land/x/fs/path/mod.ts';
+import * as path from 'https://deno.land/x/fs/path.ts';
 import { parse } from './shebang.ts';
 
 const enc = new TextEncoder();
