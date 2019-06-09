@@ -123,7 +123,6 @@ async function main() {
     throw new Error('$HOME is not defined.');
   }
   const DENOGET_HOME = `${HOME}/.deno/denoget`;
-  const DENOGET_SRC = `${DENOGET_HOME}/src`;
   const DENOGET_BIN = `${DENOGET_HOME}/bin`;
 
   const modulePath: string = args[args.length - 1];
@@ -145,13 +144,8 @@ async function main() {
   console.log('Completed loading remote script.');
 
   createDirIfNotExists(DENOGET_HOME);
-  createDirIfNotExists(DENOGET_SRC);
   createDirIfNotExists(DENOGET_BIN);
-  const SRC_FILE_PATH = `${DENOGET_SRC}/${moduleName}.ts`;
   const BIN_FILE_PATH = `${DENOGET_BIN}/${moduleName}`;
-  writeFileSync(SRC_FILE_PATH, enc.encode(`import '${modulePath}';`), {
-    perm: 0o600,
-  });
 
   const shebang = parse(moduleText.split('\n')[0]);
 
@@ -169,7 +163,7 @@ async function main() {
   const commands = [
     'deno',
     ...grantedPermissions.map(getFlagFromPermission),
-    SRC_FILE_PATH,
+    modulePath,
     '$@',
   ];
 
